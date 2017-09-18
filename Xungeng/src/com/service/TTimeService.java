@@ -15,7 +15,7 @@ public class TTimeService {
 
 	@Resource
 	private TTimeDao ttimeDao;
-	
+
 	public TTimeDao getTtimeDao() {
 		return ttimeDao;
 	}
@@ -24,7 +24,7 @@ public class TTimeService {
 		this.ttimeDao = ttimeDao;
 	}
 
-	public boolean save(TTime ttime){
+	public boolean save(TTime ttime) {
 		return ttimeDao.save(ttime);
 	}
 
@@ -36,13 +36,12 @@ public class TTimeService {
 		return ttimeDao.delete(id);
 	}
 
-	public List<TTime> find(PageBean pageBean,TTime s_ttime){
-		return ttimeDao.find(pageBean, s_ttime);
+	public List<TTime> find(PageBean pageBean) {
+		return ttimeDao.find(pageBean);
 	}
-	
-	public List<TTime> findAll(){
+
+	public List<TTime> findAll() {
 		return ttimeDao.findAll();
 	}
-	
-	
+
 }

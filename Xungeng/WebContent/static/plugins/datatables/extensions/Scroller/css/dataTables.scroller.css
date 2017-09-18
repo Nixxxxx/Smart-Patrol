@@ -1,10 +1,7 @@
-
 /*
  * Namespace: DTS (DataTables Scroller)
  */
-
-div.DTS tbody th,
-div.DTS tbody td {
+div.DTS tbody th, div.DTS tbody td {
 	white-space: nowrap;
 }
 
@@ -21,7 +18,6 @@ div.DTS div.DTS_Loading {
 	margin-top: -20px;
 	margin-left: -100px;
 	z-index: 1;
-
 	border: 1px solid #999;
 	padding: 20px 0;
 	text-align: center;
@@ -29,8 +25,7 @@ div.DTS div.DTS_Loading {
 	background-color: rgba(255, 255, 255, 0.5);
 }
 
-div.DTS div.dataTables_scrollHead,
-div.DTS div.dataTables_scrollFoot {
+div.DTS div.dataTables_scrollHead, div.DTS div.dataTables_scrollFoot {
 	background-color: white;
 }
 
@@ -41,4 +36,3 @@ div.DTS div.dataTables_scrollBody {
 div.DTS div.dataTables_scroll {
 	background: url('../images/loading-background.png') repeat 0 0;
 }
-

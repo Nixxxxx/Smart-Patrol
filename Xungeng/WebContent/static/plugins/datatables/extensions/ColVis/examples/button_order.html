@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/ico"
+	href="http://www.datatables.net/favicon.ico">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
 
-	<title>ColVis example - Button ordering</title>
-	<link rel="stylesheet" type="text/css" href="../../../media/css/jquery.dataTables.css">
-	<link rel="stylesheet" type="text/css" href="../css/dataTables.colVis.css">
-	<link rel="stylesheet" type="text/css" href="../../../examples/resources/syntax/shCore.css">
-	<link rel="stylesheet" type="text/css" href="../../../examples/resources/demo.css">
-	<style type="text/css" class="init">
-
-	</style>
-	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.js"></script>
-	<script type="text/javascript" language="javascript" src="../../../media/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" language="javascript" src="../js/dataTables.colVis.js"></script>
-	<script type="text/javascript" language="javascript" src="../../../examples/resources/syntax/shCore.js"></script>
-	<script type="text/javascript" language="javascript" src="../../../examples/resources/demo.js"></script>
-	<script type="text/javascript" language="javascript" class="init">
+<title>ColVis example - Button ordering</title>
+<link rel="stylesheet" type="text/css"
+	href="../../../media/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css"
+	href="../css/dataTables.colVis.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../examples/resources/syntax/shCore.css">
+<link rel="stylesheet" type="text/css"
+	href="../../../examples/resources/demo.css">
+<style type="text/css" class="init">
+</style>
+<script type="text/javascript" language="javascript"
+	src="../../../media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../../../media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../js/dataTables.colVis.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../../../examples/resources/syntax/shCore.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../../../examples/resources/demo.js"></script>
+<script type="text/javascript" language="javascript" class="init">
 
 
 $(document).ready(function() {
@@ -37,12 +46,22 @@ $(document).ready(function() {
 <body class="dt-example">
 	<div class="container">
 		<section>
-			<h1>ColVis example <span>Button ordering</span></h1>
+			<h1>
+				ColVis example <span>Button ordering</span>
+			</h1>
 
 			<div class="info">
-				<p>The list of columns that ColVis displays has two options for the order in which they are displayed. The default mode of operation is to show the buttons in the
-				same order as they appear in the HTML table, but the second mode of operation is to show the buttons in alphabetical order. This is done by specifying the
-				<code>order</code> option, set to <code>alpha</code>. Alphabetical button ordering is shown in this example.</p>
+				<p>
+					The list of columns that ColVis displays has two options for the
+					order in which they are displayed. The default mode of operation is
+					to show the buttons in the same order as they appear in the HTML
+					table, but the second mode of operation is to show the buttons in
+					alphabetical order. This is done by specifying the
+					<code>order</code>
+					option, set to
+					<code>alpha</code>
+					. Alphabetical button ordering is shown in this example.
+				</p>
 			</div>
 
 			<table id="example" class="display" cellspacing="0" width="100%">
@@ -538,16 +557,15 @@ $(document).ready(function() {
 
 			<div class="tabs">
 				<div class="js">
-					<p>The Javascript shown below is used to initialise the table shown in this example:</p><code class="multiline language-js">$(document).ready(function() {
-	$('#example').DataTable( {
-		dom: 'C&lt;&quot;clear&quot;&gt;lfrtip',
-		colVis: {
-			order: 'alpha'
-		}
-	} );
-} );</code>
+					<p>The Javascript shown below is used to initialise the table
+						shown in this example:</p>
+					<code class="multiline language-js">$(document).ready(function()
+						{ $('#example').DataTable( { dom:
+						'C&lt;&quot;clear&quot;&gt;lfrtip', colVis: { order: 'alpha' } }
+						); } );</code>
 
-					<p>In addition to the above code, the following Javascript library files are loaded for use in this example:</p>
+					<p>In addition to the above code, the following Javascript
+						library files are loaded for use in this example:</p>
 
 					<ul>
 						<li><a href="../../../media/js/jquery.js">../../../media/js/jquery.js</a></li>
@@ -557,16 +575,21 @@ $(document).ready(function() {
 				</div>
 
 				<div class="table">
-					<p>The HTML shown below is the raw HTML table element, before it has been enhanced by DataTables:</p>
+					<p>The HTML shown below is the raw HTML table element, before
+						it has been enhanced by DataTables:</p>
 				</div>
 
 				<div class="css">
 					<div>
-						<p>This example uses a little bit of additional CSS beyond what is loaded from the library files (below), in order to correctly display the table. The
-						additional CSS used is shown below:</p><code class="multiline language-css"></code>
+						<p>This example uses a little bit of additional CSS beyond
+							what is loaded from the library files (below), in order to
+							correctly display the table. The additional CSS used is shown
+							below:</p>
+						<code class="multiline language-css"></code>
 					</div>
 
-					<p>The following CSS library files are loaded for use in this example to provide the styling of the table:</p>
+					<p>The following CSS library files are loaded for use in this
+						example to provide the styling of the table:</p>
 
 					<ul>
 						<li><a href="../../../media/css/jquery.dataTables.css">../../../media/css/jquery.dataTables.css</a></li>
@@ -575,14 +598,19 @@ $(document).ready(function() {
 				</div>
 
 				<div class="ajax">
-					<p>This table loads data by Ajax. The latest data that has been loaded is shown below. This data will update automatically as any additional data is
-					loaded.</p>
+					<p>This table loads data by Ajax. The latest data that has been
+						loaded is shown below. This data will update automatically as any
+						additional data is loaded.</p>
 				</div>
 
 				<div class="php">
-					<p>The script used to perform the server-side processing for this table is shown below. Please note that this is just an example script using PHP. Server-side
-					processing scripts can be written in any language, using <a href="//datatables.net/manual/server-side">the protocol described in the DataTables
-					documentation</a>.</p>
+					<p>
+						The script used to perform the server-side processing for this
+						table is shown below. Please note that this is just an example
+						script using PHP. Server-side processing scripts can be written in
+						any language, using <a href="//datatables.net/manual/server-side">the
+							protocol described in the DataTables documentation</a>.
+					</p>
 				</div>
 			</div>
 		</section>
@@ -597,18 +625,25 @@ $(document).ready(function() {
 
 				<div class="toc">
 					<div class="toc-group">
-						<h3><a href="./index.html">Examples</a></h3>
+						<h3>
+							<a href="./index.html">Examples</a>
+						</h3>
 						<ul class="toc active">
 							<li><a href="./simple.html">Basic initialisation</a></li>
 							<li><a href="./new_init.html">`new` initialisation</a></li>
 							<li><a href="./text.html">Custom button text</a></li>
-							<li><a href="./exclude_columns.html">Exclude columns from list</a></li>
-							<li><a href="./title_callback.html">Column button callback</a></li>
-							<li class="active"><a href="./button_order.html">Button ordering</a></li>
+							<li><a href="./exclude_columns.html">Exclude columns
+									from list</a></li>
+							<li><a href="./title_callback.html">Column button
+									callback</a></li>
+							<li class="active"><a href="./button_order.html">Button
+									ordering</a></li>
 							<li><a href="./mouseover.html">Mouseover activation</a></li>
 							<li><a href="./group_columns.html">Group columns</a></li>
-							<li><a href="./two_tables.html">Two tables with individual controls</a></li>
-							<li><a href="./two_tables_identical.html">Two tables with shared controls</a></li>
+							<li><a href="./two_tables.html">Two tables with
+									individual controls</a></li>
+							<li><a href="./two_tables_identical.html">Two tables
+									with shared controls</a></li>
 							<li><a href="./restore.html">Restore / show all</a></li>
 							<li><a href="./jqueryui.html">jQuery UI styling</a></li>
 						</ul>
@@ -616,12 +651,21 @@ $(document).ready(function() {
 				</div>
 
 				<div class="epilogue">
-					<p>Please refer to the <a href="http://www.datatables.net">DataTables documentation</a> for full information about its API properties and methods.<br>
-					Additionally, there are a wide range of <a href="http://www.datatables.net/extras">extras</a> and <a href="http://www.datatables.net/plug-ins">plug-ins</a>
-					which extend the capabilities of DataTables.</p>
+					<p>
+						Please refer to the <a href="http://www.datatables.net">DataTables
+							documentation</a> for full information about its API properties and
+						methods.<br> Additionally, there are a wide range of <a
+							href="http://www.datatables.net/extras">extras</a> and <a
+							href="http://www.datatables.net/plug-ins">plug-ins</a> which
+						extend the capabilities of DataTables.
+					</p>
 
-					<p class="copyright">DataTables designed and created by <a href="http://www.sprymedia.co.uk">SpryMedia Ltd</a> &#169; 2007-2015<br>
-					DataTables is licensed under the <a href="http://www.datatables.net/mit">MIT license</a>.</p>
+					<p class="copyright">
+						DataTables designed and created by <a
+							href="http://www.sprymedia.co.uk">SpryMedia Ltd</a> &#169;
+						2007-2015<br> DataTables is licensed under the <a
+							href="http://www.datatables.net/mit">MIT license</a>.
+					</p>
 				</div>
 			</div>
 		</div>

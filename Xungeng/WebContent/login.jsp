@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,72 +7,85 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>无线巡更系统管理</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <base href="<%=basePath%>">
-    <link rel="shortcut icon" href="/Xungeng/static/dist/img/favicon.ico">
-    <link rel="stylesheet" href="/Xungeng/static/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Xungeng/static/dist/css/login.css">
-    
-    <style>
-        body {
-            font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", "FontAwesome", sans-serif;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>无线巡更系统管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="<%=basePath%>">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/static/dist/img/favicon.ico">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/dist/css/login.css">
+
+<style>
+body {
+	font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial,
+		"Microsoft YaHei", FreeSans, Arimo, "Droid Sans",
+		"wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3",
+		"FontAwesome", sans-serif;
+}
+</style>
 </head>
 <body>
-<div class="container w-xxl w-auto-xs">
-    <a href="" class="navbar-brand block m-t m-b-sm">无线巡更系统管理</a>
-    <div class="m-b-xxl">
-        <div class="wrapper text-center">
-            <strong>Sign in</strong>
-        </div>
-        <form id="login_form">
-            <div class="text-danger wrapper-xs text-center invisible" id="error_msg">
-                	错误信息
-            </div>
-            <div class="list-group list-group-sm">
-                <div class="list-group-item">
-                    <input type="text" name="userName" id="userName" placeholder="Username" class="form-control no-border">
-                </div>
-                <div class="list-group-item">
-                    <input type="password" name="password" id="password" placeholder="Password" class="form-control no-border">
-                </div>
-                <div class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-7">
-                            <input id="captcha" type="text" name="captcha" size=8 value="${imageCode }" placeholder="Captcha" class="form-control no-border">
-                        </div>
-                        <div class="col-xs-5">
-                            <img id="randImage" name="randImage" style="cursor: pointer;height: 34px;width: 100%" title="点击可更换"
-                                 onclick="javascript:loadImage();"src="image.jsp">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-lg btn-primary btn-block" id="login_btn" data-loading-text="登录中...">立即登录</button>
-            <div class="text-center m-t m-b">
-            	<span class="left">记住我：</span>
-                <input id="checkbox" type="checkbox" name="checkbox"/>
-            </div>	
-            <div class="text-center m-t m-b"><a href="javascript:void(0);">Forgot password?</a></div>
-            <div class="line line-dashed"></div>
-        </form>
-    </div>
-    <div class="text-center">
-        <p>
-            <small class="text-muted">
-                <a href="" target="_blank">云卫士</a><br> All Rights Reserved &copy; 2016
-            </small>
-        </p>
-    </div>
-</div>
+	<div class="container w-xxl w-auto-xs">
+		<a href="" class="navbar-brand block m-t m-b-sm">无线巡更系统管理</a>
+		<div class="m-b-xxl">
+			<div class="wrapper text-center">
+				<strong>Sign in</strong>
+			</div>
+			<form id="login_form">
+				<div class="text-danger wrapper-xs text-center invisible"
+					id="error_msg">错误信息</div>
+				<div class="list-group list-group-sm">
+					<div class="list-group-item">
+						<input type="text" name="userName" id="userName"
+							placeholder="Username" class="form-control no-border">
+					</div>
+					<div class="list-group-item">
+						<input type="password" name="password" id="password"
+							placeholder="Password" class="form-control no-border">
+					</div>
+					<div class="list-group-item">
+						<div class="row">
+							<div class="col-xs-7">
+								<input id="captcha" type="text" name="captcha" size=8
+									value="${imageCode }" placeholder="Captcha"
+									class="form-control no-border">
+							</div>
+							<div class="col-xs-5">
+								<img id="randImage" name="randImage"
+									style="cursor: pointer; height: 34px; width: 100%"
+									title="点击可更换" onclick="javascript:loadImage();" src="image.jsp">
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-lg btn-primary btn-block"
+					id="login_btn" data-loading-text="登录中...">立即登录</button>
+				<div class="text-center m-t m-b">
+					<span class="left">记住我：</span> <input id="checkbox" type="checkbox"
+						name="checkbox" />
+				</div>
+				<div class="text-center m-t m-b">
+					<a href="javascript:void(0);">Forgot password?</a>
+				</div>
+				<div class="line line-dashed"></div>
+			</form>
+		</div>
+		<div class="text-center">
+			<p>
+				<small class="text-muted"> <a href="" target="_blank">云卫士</a><br>
+					All Rights Reserved &copy; 2016
+				</small>
+			</p>
+		</div>
+	</div>
 </body>
 <!-- jQuery 3.1.1 -->
-<script src="${pageContext.request.contextPath}/static/plugins/jQuery/jquery-3.1.1.min.js"></script>
-<script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/static/plugins/jQuery/jquery-3.1.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
 <!--<script src="static/js/sha1.js"></script>-->
 <script>
 $(function () {
@@ -112,7 +125,7 @@ $(function () {
         });*/
         var login_btn = $("#login_btn");
         $.ajax({
-            url: "/Xungeng/admin/login",
+            url: "admin/login",
             type: "POST",
             data: {
                 userName: userName,
@@ -132,7 +145,7 @@ $(function () {
             },
             success: function (data) {
             	if(data.result==""){
-            		window.location.href ="/Xungeng/admin/index";
+            		window.location.href ="admin/index";
             	}else{
                     show_error(data.result);
             	}

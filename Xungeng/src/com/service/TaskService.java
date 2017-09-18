@@ -15,7 +15,7 @@ public class TaskService {
 
 	@Resource
 	private TaskDao taskDao;
-	
+
 	public TaskDao getTaskDao() {
 		return taskDao;
 	}
@@ -24,22 +24,40 @@ public class TaskService {
 		this.taskDao = taskDao;
 	}
 
-	public boolean save(Task task){
+	public boolean save(Task task) {
 		return taskDao.save(task);
 	}
-
 
 	public boolean delete(int id) {
 		return taskDao.delete(id);
 	}
 
-	public List<Task> find(PageBean pageBean,Task s_task){
-		return taskDao.find(pageBean, s_task);
+	public List<Task> find(PageBean pageBean, boolean status) {
+		return taskDao.find(pageBean, status);
 	}
-	
-	public List<Task> findAll(){
+
+	public List<Task> findAll() {
 		return taskDao.findAll();
 	}
-	
-	
+
+	public Task findById(int id) {
+		return taskDao.findById(id);
+	}
+
+	public boolean stageUpdate(int locationId, int deviceId) {
+		return taskDao.stageUpdate(locationId, deviceId);
+	}
+
+	public List<int[]> findData(Integer nowStage, String start, String end) {
+		return taskDao.findData(nowStage, start, end);
+	}
+
+	public List<Task> findNotComplete() {
+		return taskDao.findNotComplete();
+	}
+
+	public boolean update(Task task) {
+		return taskDao.update(task);
+	}
+
 }

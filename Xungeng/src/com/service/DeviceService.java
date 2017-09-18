@@ -23,8 +23,8 @@ public class DeviceService {
 	public void setDeviceDao(DeviceDao deviceDao) {
 		this.deviceDao = deviceDao;
 	}
-	
-	public boolean save(Device device){
+
+	public boolean save(Device device) {
 		return deviceDao.save(device);
 	}
 
@@ -36,16 +36,20 @@ public class DeviceService {
 		return deviceDao.delete(id);
 	}
 
-	public List<Device> find(PageBean pageBean,Device s_device){
-		return deviceDao.find(pageBean, s_device);
+	public List<Device> find(PageBean pageBean) {
+		return deviceDao.find(pageBean);
 	}
-	
-	public List<Device> findAll(){
+
+	public List<Device> findAll() {
 		return deviceDao.findAll();
 	}
-	
-	public Device findById(int id){
+
+	public Device findById(int id) {
 		return deviceDao.findById(id);
 	}
-	
+
+	public Device findByNumber(String deviceNumber) {
+		return deviceDao.findByNumber(deviceNumber);
+	}
+
 }

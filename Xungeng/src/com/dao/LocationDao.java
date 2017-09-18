@@ -16,13 +16,13 @@ import com.entity.PageBean;
 
 @Repository
 public class LocationDao {
-	
+
 	@Resource
 	private HibernateTemplate hibernateTemplate;
-	
+
 	@Resource
 	private SessionFactory sessionFactory;
-	
+
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
 	}
@@ -38,61 +38,66 @@ public class LocationDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	 
-	public boolean save(Location location){
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+
+	public boolean save(Location location) {
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		session.save(location);
 		tx.commit();
 		session.close();
 		return true;
 	}
-	
-	public boolean update(Location location){
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+
+	public boolean update(Location location) {
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		session.merge(location);
 		tx.commit();
 		session.close();
 		return true;
 	}
-	
-	public boolean delete(int id){
-		Location location=this.findById(id);
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tr=session.beginTransaction();
-		session.delete(location); 
+
+	public boolean delete(int id) {
+		Location location = this.findById(id);
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tr = session.beginTransaction();
+		session.delete(location);
 		tr.commit();
 		session.close();
 		return true;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<Location> find(PageBean pageBean, Location s_location){
-		StringBuffer sb=new StringBuffer("from Location");
-//		if(s_location!=null){
-//			if(StringUtil.isNotEmpty(s_location.getNumber())){
-//				sb.append(" and deptName like '%"+s_location.getName()+"%'");
-//			}
-//		}
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+	public List<Location> find(PageBean pageBean) {
+		StringBuffer sb = new StringBuffer("from Location");
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		Query q = session.createQuery(sb.toString());
 		q.setFirstResult(pageBean.getStart());
-        q.setMaxResults(pageBean.getPageSize());
-        List<Location> locationList=q.list();
-        tx.commit();
-        session.close();
+		q.setMaxResults(pageBean.getPageSize());
+		List<Location> locationList = q.list();
+		tx.commit();
+		session.close();
 		return locationList;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<Location> findAll(){
-		String queryString="from Location";
+	public List<Location> findAll() {
+		String queryString = "from Location";
 		return (List<Location>) this.hibernateTemplate.find(queryString);
 	}
-	
-	public Location findById(int id){
+
+	public Location findById(int id) {
 		return (Location) this.hibernateTemplate.get(Location.class, id);
+	}
+
+	public Location findByNumber(String locationNumber) {
+		String query = "from Location where number = '"+locationNumber+"'";
+		@SuppressWarnings("unchecked")
+		List<Location> locations = (List<Location>) this.hibernateTemplate.find(query);
+		if(locations.size() != 1) 
+			return null;
+		else
+			return (Location) locations.get(0);
 	}
 }

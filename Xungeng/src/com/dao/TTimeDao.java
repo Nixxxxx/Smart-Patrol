@@ -16,13 +16,13 @@ import com.entity.TTime;
 
 @Repository
 public class TTimeDao {
-	
+
 	@Resource
 	private HibernateTemplate hibernateTemplate;
-	
+
 	@Resource
 	private SessionFactory sessionFactory;
-	
+
 	public HibernateTemplate getHibernateTemplate() {
 		return hibernateTemplate;
 	}
@@ -38,61 +38,56 @@ public class TTimeDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	 
-	public boolean save(TTime ttime){
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+
+	public boolean save(TTime ttime) {
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		session.save(ttime);
 		tx.commit();
 		session.close();
 		return true;
 	}
-	
-	public boolean update(TTime ttime){
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+
+	public boolean update(TTime ttime) {
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		session.merge(ttime);
 		tx.commit();
 		session.close();
 		return true;
 	}
-	
-	public boolean delete(int id){
-		TTime ttime=this.findById(id);
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tr=session.beginTransaction();
-		session.delete(ttime); 
+
+	public boolean delete(int id) {
+		TTime ttime = this.findById(id);
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tr = session.beginTransaction();
+		session.delete(ttime);
 		tr.commit();
 		session.close();
 		return true;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<TTime> find(PageBean pageBean, TTime s_ttime){
-		StringBuffer sb=new StringBuffer("from TTime");
-//		if(s_ttime!=null){
-//			if(StringUtil.isNotEmpty(s_ttime.getNumber())){
-//				sb.append(" and deptName like '%"+s_ttime.getName()+"%'");
-//			}
-//		}
-		Session session=getHibernateTemplate().getSessionFactory().openSession();
-		Transaction tx=session.beginTransaction();
+	public List<TTime> find(PageBean pageBean) {
+		StringBuffer sb = new StringBuffer("from TTime");
+		Session session = getHibernateTemplate().getSessionFactory().openSession();
+		Transaction tx = session.beginTransaction();
 		Query q = session.createQuery(sb.toString());
 		q.setFirstResult(pageBean.getStart());
-        q.setMaxResults(pageBean.getPageSize());
-        List<TTime> ttimeList=q.list();
-        tx.commit();
-        session.close();
+		q.setMaxResults(pageBean.getPageSize());
+		List<TTime> ttimeList = q.list();
+		tx.commit();
+		session.close();
 		return ttimeList;
 	}
-	
+
 	@SuppressWarnings("unchecked")
-	public List<TTime> findAll(){
-		String queryString="from TTime";
+	public List<TTime> findAll() {
+		String queryString = "from TTime";
 		return (List<TTime>) this.hibernateTemplate.find(queryString);
 	}
-	
-	public TTime findById(int id){
+
+	public TTime findById(int id) {
 		return (TTime) this.hibernateTemplate.get(TTime.class, id);
 	}
 }

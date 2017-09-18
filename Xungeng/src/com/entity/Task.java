@@ -12,8 +12,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name="task")
-public class Task implements Serializable{
+@Table(name = "task")
+public class Task implements Serializable {
 
 	/**
 	 * 
@@ -26,13 +26,13 @@ public class Task implements Serializable{
 	private Date startTime;
 	private Date endTime;
 	private String extra;
-	private Date addTime=new Date();
-	private int orgStage=1;
-	private int nowStage=1;
-	private int recordId=0;
-	private int status=1;
-	
-	
+	private Date addTime = new Date();
+	private Date completeTime;
+	private int orgStage = 1;
+	private int nowStage = 1;
+	private int recordId = 0;
+	private int status = 1;
+
 	public Task() {
 		super();
 	}
@@ -46,106 +46,125 @@ public class Task implements Serializable{
 		this.endTime = endTime;
 		this.extra = extra;
 	}
-	
+
 	@Id
-	@Column(name="id",nullable=false,unique=true)
-	@GenericGenerator(name="generator",strategy="native")
-	@GeneratedValue(generator="generator")
+	@Column(name = "id", nullable = false, unique = true)
+	@GenericGenerator(name = "generator", strategy = "native")
+	@GeneratedValue(generator = "generator")
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
-	@Column(name="member_id",nullable=false,length=10)
+	@Column(name = "member_id", nullable = false, length = 10)
 	public int getMemberId() {
 		return memberId;
 	}
+
 	public void setMemberId(int memberId) {
 		this.memberId = memberId;
 	}
 
-	@Column(name="device_id",nullable=false,length=10)
+	@Column(name = "device_id", nullable = false, length = 10)
 	public int getDeviceId() {
 		return deviceId;
 	}
+
 	public void setDeviceId(int deviceId) {
 		this.deviceId = deviceId;
 	}
-	
-	@Column(name="location_id",nullable=false,length=10)
+
+	@Column(name = "location_id", nullable = false, length = 10)
 	public int getLocationId() {
 		return locationId;
 	}
+
 	public void setLocationId(int locationId) {
 		this.locationId = locationId;
 	}
 
-	@Column(name="start_datetime",nullable=false,length=10)
+	@Column(name = "start_datetime", nullable = false, length = 10)
 	public Date getStartTime() {
 		return startTime;
 	}
+
 	public void setStartTime(Date startTime) {
 		this.startTime = startTime;
 	}
 
-	@Column(name="end_datetime",nullable=false,length=10)
+	@Column(name = "end_datetime", nullable = false)
 	public Date getEndTime() {
 		return endTime;
 	}
+
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
 
-	@Column(name="extra",nullable=false,length=30)
+	@Column(name = "extra", nullable = false, length = 30)
 	public String getExtra() {
 		return extra;
 	}
+
 	public void setExtra(String extra) {
 		this.extra = extra;
 	}
 
-	@Column(name="add_time",nullable=false,length=30)
+	@Column(name = "add_time", nullable = false)
 	public Date getAddTime() {
 		return addTime;
 	}
+
 	public void setAddTime(Date addTime) {
 		this.addTime = addTime;
 	}
+	
+	@Column(name = "complete_time", nullable = true)
+	public Date getCompleteTime() {
+		return completeTime;
+	}
 
-	@Column(name="org_stage",nullable=false,length=4)
+	public void setCompleteTime(Date completeTime) {
+		this.completeTime = completeTime;
+	}
+
+	@Column(name = "org_stage", nullable = false, length = 4)
 	public int getOrgStage() {
 		return orgStage;
 	}
+
 	public void setOrgStage(int orgStage) {
 		this.orgStage = orgStage;
 	}
 
-	@Column(name="now_stage",nullable=false,length=4)
+	@Column(name = "now_stage", nullable = false, length = 4)
 	public int getNowStage() {
 		return nowStage;
 	}
+
 	public void setNowStage(int nowStage) {
 		this.nowStage = nowStage;
 	}
 
-	@Column(name="record_id",nullable=false,length=10)
+	@Column(name = "record_id", nullable = false, length = 10)
 	public int getRecordId() {
 		return recordId;
 	}
+
 	public void setRecordId(int recordId) {
 		this.recordId = recordId;
 	}
 
-	@Column(name="status",nullable=false,length=4)
+	@Column(name = "status", nullable = false, length = 4)
 	public int getStatus() {
 		return status;
 	}
+
 	public void setStatus(int status) {
 		this.status = status;
 	}
 
-
-	
 }

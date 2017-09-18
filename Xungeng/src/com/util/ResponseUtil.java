@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import net.sf.json.JSONObject;
 
 public class ResponseUtil {
-	
-	public static void writeJson(HttpServletResponse response,JSONObject json){
-		try {  
+
+	public static void writeJson(HttpServletResponse response, JSONObject json) {
+		try {
 			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println(json);
@@ -20,6 +20,6 @@ public class ResponseUtil {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 }

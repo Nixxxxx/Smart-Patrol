@@ -24,7 +24,7 @@ public class LocationService {
 		this.locationDao = locationDao;
 	}
 
-	public boolean save(Location location){
+	public boolean save(Location location) {
 		return locationDao.save(location);
 	}
 
@@ -36,16 +36,20 @@ public class LocationService {
 		return locationDao.delete(id);
 	}
 
-	public List<Location> find(PageBean pageBean,Location s_location){
-		return locationDao.find(pageBean, s_location);
+	public List<Location> find(PageBean pageBean) {
+		return locationDao.find(pageBean);
 	}
-	
-	public List<Location> findAll(){
+
+	public List<Location> findAll() {
 		return locationDao.findAll();
 	}
-	
-	public Location findById(int id){
+
+	public Location findById(int id) {
 		return locationDao.findById(id);
 	}
-	
+
+	public Location findByNumber(String locationNumber) {
+		return locationDao.findByNumber(locationNumber);
+	}
+
 }

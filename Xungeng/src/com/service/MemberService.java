@@ -16,7 +16,6 @@ public class MemberService {
 	@Resource
 	private MemberDao memberDao;
 
-	
 	public MemberDao getMemberDao() {
 		return memberDao;
 	}
@@ -25,7 +24,7 @@ public class MemberService {
 		this.memberDao = memberDao;
 	}
 
-	public boolean save(Member member){
+	public boolean save(Member member) {
 		return memberDao.save(member);
 	}
 
@@ -37,16 +36,16 @@ public class MemberService {
 		return memberDao.delete(id);
 	}
 
-	public List<Member> find(PageBean pageBean,Member s_member){
-		return memberDao.find(pageBean, s_member);
+	public List<Member> find(PageBean pageBean) {
+		return memberDao.find(pageBean);
 	}
-	
-	public List<Member> findAll(){
+
+	public List<Member> findAll() {
 		return memberDao.findAll();
 	}
-	
-	public Member findById(int id){
+
+	public Member findById(int id) {
 		return memberDao.findById(id);
 	}
-	
+
 }
